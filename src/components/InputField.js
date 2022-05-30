@@ -1,11 +1,14 @@
-
-
-export const InputField = ({text, handleInput, handleSubmit}) => {
-  return (
+const InputField = ({ value, updateText, handleAction }) => {
+	return (
 		<label>
-			<input value={text} onChange={(e) => handleInput(e.target.value)} />
-			<button onClick={handleSubmit}>Add todo</button>
+			<input
+				placeholer='new todo'
+				value={value}
+				onChange={(e) => updateText(e.target.value)}
+			/>
+			<button onClick={handleAction}>Add todo</button>
 		</label>
 	);
-}
+};
 
+export default InputField;
